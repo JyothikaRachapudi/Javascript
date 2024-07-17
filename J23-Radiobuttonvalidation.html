@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+</head>
+<body>
+    <h1>Radio Button Validation</h1>
+    <form action="loginsucess.html" id="radioform" onsubmit="return validateForm()">
+        <h3>Login Form:</h3>
+     <input type="radio"name="gender" value="male">Male<br>
+    <input type="radio"name="gender" value="Female">Female<br>
+    <input type="radio"name="gender" value="Other">Other<br>  
+                 <input type="submit">
+     </form>
+
+     <script>
+        function validateForm(){
+        const   radioButtons=document.getElementsByName("gender");
+          let checkedButton=false;
+          for(let i=0;i<radioButtons.length;i++)
+          {
+            if(radioButtons[i].checked)
+            {
+            checkedButton=true;
+            break;
+            }
+          } 
+        if(!checkedButton) {
+          alert("Please enter a validate option");
+          return false;
+
+        }
+        return true;
+        }
+    </script>
+</body>
+</html>
